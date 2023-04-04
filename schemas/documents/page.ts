@@ -139,7 +139,6 @@ export default defineType({
             { type: 'frontpage' },
             { type: 'partners' },
             { type: 'recommend' },
-            { type: 'recent' },
           ],
         }),
       ],
