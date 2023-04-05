@@ -24,6 +24,7 @@ import recommend from 'schemas/documents/recommend'
 import recent from 'schemas/documents/recent'
 import partner from 'schemas/partner'
 import {codeInput} from '@sanity/code-input'
+import blog from 'schemas/documents/blog'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -64,6 +65,7 @@ export default defineConfig({
       recommend,
       recent,
       partner,
+      blog
     ],
   },
   plugins: [
