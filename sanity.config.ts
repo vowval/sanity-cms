@@ -23,6 +23,7 @@ import partners from 'schemas/documents/partners'
 import recommend from 'schemas/documents/recommend'
 import recent from 'schemas/documents/recent'
 import {codeInput} from '@sanity/code-input'
+import partnerlogos from 'schemas/partnerlogos'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -36,6 +37,7 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   partners.name,
   recommend.name,
   recent.name,
+  partnerlogos.name,
 ]
 
 export default defineConfig({
@@ -61,6 +63,7 @@ export default defineConfig({
       partners,
       recommend,
       recent,
+      partnerlogos
     ],
   },
   plugins: [
