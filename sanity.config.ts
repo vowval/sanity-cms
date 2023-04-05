@@ -11,8 +11,8 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import page from 'schemas/documents/page'
-import project from 'schemas/documents/project'
-import layoutcs from 'schemas/documents/layoutcs'
+// import project from 'schemas/documents/project'
+// import layoutcs from 'schemas/documents/layoutcs'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
@@ -25,6 +25,7 @@ import recent from 'schemas/documents/recent'
 import partner from 'schemas/partner'
 import {codeInput} from '@sanity/code-input'
 import blog from 'schemas/documents/blog'
+import article from 'schemas/documents/article'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -33,12 +34,14 @@ const title =
 export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   home.name,
   page.name,
-  project.name,
-  layoutcs.name,
+  // project.name,
+  // layoutcs.name,
   // partners.name,
   recommend.name,
   recent.name,
   partner.name,
+  blog.name,
+  article.name,
 ]
 
 export default defineConfig({
@@ -55,8 +58,8 @@ export default defineConfig({
       // Documents
       duration,
       page,
-      project,
-      layoutcs,
+      // project,
+      // layoutcs,
       // Objects
       milestone,
       timeline,
@@ -65,7 +68,8 @@ export default defineConfig({
       recommend,
       recent,
       partner,
-      blog
+      blog,
+      article,
     ],
   },
   plugins: [

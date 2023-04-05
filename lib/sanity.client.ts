@@ -15,6 +15,8 @@ import {
   recommendPaths,
   recentBySlugQuery,
   recentPaths,
+  articleBySlugQuery,
+  articlePaths,
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
 import type {
@@ -26,6 +28,7 @@ import type {
   PartnersPayload,
   RecommendPayload,
   RecentPayload,
+  ArticlePayload,
 } from 'types'
 
 /**
@@ -121,6 +124,16 @@ export async function getRecentBySlug({
   return await sanityClient(token)?.fetch(recentBySlugQuery, { slug })
 }
 
+export async function getArticleBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<ArticlePayload | undefined> {
+  return await sanityClient(token)?.fetch(articleBySlugQuery, { slug })
+}
+
 export async function getProjectPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(projectPaths)
 }
@@ -143,4 +156,8 @@ export async function getPagePaths(): Promise<string[]> {
 
 export async function getRecentPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(recentPaths)
+}
+
+export async function getArticlePaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(articlePaths)
 }

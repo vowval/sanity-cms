@@ -14,9 +14,11 @@ export function resolveHref(
     case 'partners':
         return slug ? `/partners/${slug}` : undefined
     case 'recommend':
-          return slug ? `/recommend/${slug}` : undefined
+        return slug ? `/recommend/${slug}` : undefined
     case 'recent':
-          return slug ? `/recent/${slug}` : undefined
+        return slug ? `/recent/${slug}` : undefined
+    case 'article':
+        return slug ? `/article/${slug}` : undefined
     default:
       console.warn('Invalid document type:', documentType)
       return undefined
