@@ -137,10 +137,10 @@ export default defineType({
           type: 'reference',
           to: [
             { type: 'frontpage' },
-            { type: 'partners' },
+            // { type: 'partners' },
             { type: 'recommend' },
             { type: 'recent' },
-            { type: 'partnerlogo'},
+            { type: 'partnerlogo' },
           ],
         }),
       ],
