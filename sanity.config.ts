@@ -20,8 +20,8 @@ import home from 'schemas/singletons/home'
 import frontpage from 'schemas/singletons/frontpage'
 import settings from 'schemas/singletons/settings'
 // import partners from 'schemas/documents/partners'
-import recommend from 'schemas/documents/recommend'
-import recent from 'schemas/documents/recent'
+// import recommend from 'schemas/documents/recommend'
+// import recent from 'schemas/documents/recent'
 import partner from 'schemas/partner'
 import {codeInput} from '@sanity/code-input'
 import blog from 'schemas/documents/blog'
@@ -37,8 +37,8 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   // project.name,
   // layoutcs.name,
   // partners.name,
-  recommend.name,
-  recent.name,
+  // recommend.name,
+  // recent.name,
   partner.name,
   blog.name,
   article.name,
@@ -65,8 +65,8 @@ export default defineConfig({
       timeline,
       frontpage,
       // partners,
-      recommend,
-      recent,
+      // recommend,
+      // recent,
       partner,
       blog,
       article,
