@@ -16,9 +16,9 @@ import page from 'schemas/documents/page'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
-import home from 'schemas/singletons/home'
+// import home from 'schemas/singletons/home'
 import frontpage from 'schemas/singletons/frontpage'
-import settings from 'schemas/singletons/settings'
+// import settings from 'schemas/singletons/settings'
 // import partners from 'schemas/documents/partners'
 // import recommend from 'schemas/documents/recommend'
 // import recent from 'schemas/documents/recent'
@@ -32,7 +32,7 @@ const title =
   'Next.js Personal Website with Sanity.io'
 
 export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
-  home.name,
+  // home.name,
   page.name,
   // project.name,
   // layoutcs.name,
@@ -53,8 +53,8 @@ export default defineConfig({
     // If you want more content types, you can add them to this array
     types: [
       // Singletons
-      home,
-      settings,
+      // home,
+      // settings,
       // Documents
       duration,
       page,
@@ -74,12 +74,12 @@ export default defineConfig({
   },
   plugins: [
     deskTool({
-      structure: pageStructure([home, settings, frontpage]),
+      structure: pageStructure([/*home, settings,*/ frontpage]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
-    singletonPlugin([home.name, settings.name, frontpage.name]),
+    singletonPlugin([/*home.name, settings.name,*/ frontpage.name]),
     // Add the "Open preview" action
     productionUrl({
       apiVersion,
