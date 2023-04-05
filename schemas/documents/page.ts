@@ -140,6 +140,7 @@ export default defineType({
             { type: 'partners' },
             { type: 'recommend' },
             { type: 'recent' },
+            { type: 'partnerlogo'},
           ],
         }),
       ],
