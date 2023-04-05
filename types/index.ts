@@ -146,3 +146,16 @@ export interface SettingsPayload {
   menuItems?: MenuItem[]
   ogImage?: Image
 }
+
+export interface ArticlePayload {
+  coverImage?: Image
+  description?: PortableTextBlock[]
+  duration?: {
+    start?: string
+    end?: string
+  }
+  overview?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}

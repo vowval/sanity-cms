@@ -130,3 +130,16 @@ export const recentBySlugQuery = groq`
 export const recentPaths = groq`
   *[_type == "recent" && slug.current != null].slug.current
 `
+
+export const articleBySlugQuery = groq`
+  *[_type == "article" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const articlePaths = groq`
+  *[_type == "article" && slug.current != null].slug.current
+`
