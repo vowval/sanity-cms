@@ -17,6 +17,8 @@ import {
   recentPaths,
   articleBySlugQuery,
   articlePaths,
+  blogBySlugQuery,
+  blogPaths,
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
 import type {
@@ -29,6 +31,7 @@ import type {
   RecommendPayload,
   RecentPayload,
   ArticlePayload,
+  BlogPayload,
 } from 'types'
 
 /**
@@ -134,6 +137,16 @@ export async function getArticleBySlug({
   return await sanityClient(token)?.fetch(articleBySlugQuery, { slug })
 }
 
+export async function getBlogBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<BlogPayload | undefined> {
+  return await sanityClient(token)?.fetch(blogBySlugQuery, { slug })
+}
+
 export async function getProjectPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(projectPaths)
 }
@@ -160,4 +173,8 @@ export async function getRecentPaths(): Promise<string[]> {
 
 export async function getArticlePaths(): Promise<string[]> {
   return await sanityClient()?.fetch(articlePaths)
+}
+
+export async function getBlogPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(blogPaths)
 }

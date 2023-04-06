@@ -159,3 +159,16 @@ export interface ArticlePayload {
   tags?: string[]
   title?: string
 }
+
+export interface BlogPayload {
+  coverImage?: Image
+  description?: PortableTextBlock[]
+  duration?: {
+    start?: string
+    end?: string
+  }
+  overview?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}
