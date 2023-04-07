@@ -156,3 +156,16 @@ export const blogBySlugQuery = groq`
 export const blogPaths = groq`
   *[_type == "blog" && slug.current != null].slug.current
 `
+export const detail_articlesBySlugQuery = groq`
+  *[_type == "detail_articles" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    "slug": slug.current,
+    tags,
+    title,
+    galleryImages,
+  }
+`
+export const detail_articlesPaths = groq`
+  *[_type == "detail_articles" && slug.current != null].slug.current
+`
