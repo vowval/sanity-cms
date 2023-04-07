@@ -172,3 +172,16 @@ export interface BlogPayload {
   tags?: string[]
   title?: string
 }
+
+export interface Detail_articlesPayload {
+  coverImage?: Image
+  description?: PortableTextBlock[]
+  duration?: {
+    start?: string
+    end?: string
+  }
+  overview?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}
