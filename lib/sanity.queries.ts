@@ -169,3 +169,28 @@ export const detail_articlesBySlugQuery = groq`
 export const detail_articlesPaths = groq`
   *[_type == "detail_articles" && slug.current != null].slug.current
 `
+export const navigationBySlugQuery = groq`
+  *[_type == "navigation" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    "slug": slug.current,
+    tags,
+    title,
+    galleryImages,
+  }
+`
+export const navigationPaths = groq`
+  *[_type == "navigation" && slug.current != null].slug.current
+`
+export const sub_menuBySlugQuery = groq`
+  *[_type == "sub_menu" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const sub_menuPaths = groq`
+  *[_type == "sub_menu" && slug.current != null].slug.current
+`

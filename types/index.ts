@@ -185,3 +185,21 @@ export interface Detail_articlesPayload {
   tags?: string[]
   title?: string
 }
+
+export interface NavigationPayload {
+  coverImage?: Image
+  description?: PortableTextBlock[]
+  duration?: {
+    start?: string
+    end?: string
+  }
+  overview?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}
+
+export interface Sub_menuPayload {
+  slug: string
+  title?: string
+}
