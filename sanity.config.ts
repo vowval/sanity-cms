@@ -26,6 +26,7 @@ import partner from 'schemas/partner'
 import {codeInput} from '@sanity/code-input'
 import blog from 'schemas/documents/blog'
 import article from 'schemas/documents/article'
+import detail_articles from 'schemas/documents/detail_articles'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -42,6 +43,7 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   partner.name,
   blog.name,
   article.name,
+  detail_articles.name,
 ]
 
 export default defineConfig({
@@ -70,6 +72,7 @@ export default defineConfig({
       partner,
       blog,
       article,
+      detail_articles,
     ],
   },
   plugins: [
