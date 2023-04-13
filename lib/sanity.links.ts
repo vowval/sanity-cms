@@ -22,7 +22,12 @@ export function resolveHref(
     case 'blog':
         return slug ? `/blog/${slug}` : undefined
     case 'detail_articles':
-          return slug ? `/detail_articles/${slug}` : undefined
+        return slug ? `/detail_articles/${slug}` : undefined
+    case 'navigation':
+        return slug ? `/navigation/${slug}` : undefined
+    case 'sub_menu':
+        return slug ? `/sub_menu/${slug}` : undefined
+          
     default:
       console.warn('Invalid document type:', documentType)
       return undefined
