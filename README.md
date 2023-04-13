@@ -8,6 +8,7 @@ You can use this starter to kick-start a personal website or learn these technol
 
 [![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vowval/sanity-cms.git)
 > **Note**
 >
 > This starter uses the `/pages` directory for Next.js routing.
