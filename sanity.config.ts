@@ -27,6 +27,8 @@ import {codeInput} from '@sanity/code-input'
 import blog from 'schemas/documents/blog'
 import article from 'schemas/documents/article'
 import detail_articles from 'schemas/documents/detail_articles'
+import navigation from 'schemas/documents/navigation'
+import sub_menu from 'schemas/documents/sub_menu'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -44,6 +46,8 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   blog.name,
   article.name,
   detail_articles.name,
+  navigation.name,
+  sub_menu.name,
 ]
 
 export default defineConfig({
@@ -73,6 +77,8 @@ export default defineConfig({
       blog,
       article,
       detail_articles,
+      navigation,
+      sub_menu,
     ],
   },
   plugins: [

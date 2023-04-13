@@ -21,6 +21,10 @@ import {
   blogPaths,
   detail_articlesBySlugQuery,
   detail_articlesPaths,
+  navigationBySlugQuery,
+  navigationPaths,
+  sub_menuBySlugQuery,
+  sub_menuPaths,
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
 import type {
@@ -35,6 +39,8 @@ import type {
   ArticlePayload,
   BlogPayload,
   Detail_articlesPayload,
+  NavigationPayload,
+  Sub_menuPayload,
 } from 'types'
 
 /**
@@ -160,6 +166,26 @@ export async function getDetail_articlesBySlug({
   return await sanityClient(token)?.fetch(detail_articlesBySlugQuery, { slug })
 }
 
+export async function getNavigationBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<NavigationPayload | undefined> {
+  return await sanityClient(token)?.fetch(navigationBySlugQuery, { slug })
+}
+
+export async function getSub_menuBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<Sub_menuPayload | undefined> {
+  return await sanityClient(token)?.fetch(sub_menuBySlugQuery, { slug })
+}
+
 export async function getProjectPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(projectPaths)
 }
@@ -194,4 +220,12 @@ export async function getBlogPaths(): Promise<string[]> {
 
 export async function getDetail_articlesPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(detail_articlesPaths)
+}
+
+export async function getNavigationPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(navigationPaths)
+}
+
+export async function getSub_menuPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(sub_menuPaths)
 }
