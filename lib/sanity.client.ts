@@ -25,6 +25,13 @@ import {
   navigationPaths,
   sub_menuBySlugQuery,
   sub_menuPaths,
+  spotlightBySlugQuery,
+  spotlightPaths,
+  testimonialBySlugQuery,
+  testimonialPaths,
+  footersectionBySlugQuery,
+  footersectionPaths,
+  
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
 import type {
@@ -41,6 +48,10 @@ import type {
   Detail_articlesPayload,
   NavigationPayload,
   Sub_menuPayload,
+  SpotlightPayload,
+  TestimonialPayload,
+  FootersectionPayload,
+  
 } from 'types'
 
 /**
@@ -176,6 +187,26 @@ export async function getNavigationBySlug({
   return await sanityClient(token)?.fetch(navigationBySlugQuery, { slug })
 }
 
+export async function getSpotlightBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<SpotlightPayload | undefined> {
+  return await sanityClient(token)?.fetch(spotlightBySlugQuery, { slug })
+}
+
+export async function getTestimonialBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<TestimonialPayload | undefined> {
+  return await sanityClient(token)?.fetch(testimonialBySlugQuery, { slug })
+}
+
 export async function getSub_menuBySlug({
   slug,
   token,
@@ -184,6 +215,16 @@ export async function getSub_menuBySlug({
   token?: string
 }): Promise<Sub_menuPayload | undefined> {
   return await sanityClient(token)?.fetch(sub_menuBySlugQuery, { slug })
+}
+
+export async function getFootersectionBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<FootersectionPayload | undefined> {
+  return await sanityClient(token)?.fetch(footersectionBySlugQuery, { slug })
 }
 
 export async function getProjectPaths(): Promise<string[]> {
@@ -228,4 +269,16 @@ export async function getNavigationPaths(): Promise<string[]> {
 
 export async function getSub_menuPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(sub_menuPaths)
+}
+
+export async function getSpotlightPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(spotlightPaths)
+}
+
+export async function getTestimonialPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(testimonialPaths)
+}
+
+export async function getFootersectionPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(footersectionPaths)
 }
