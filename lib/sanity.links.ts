@@ -27,6 +27,12 @@ export function resolveHref(
         return slug ? `/navigation/${slug}` : undefined
     case 'sub_menu':
         return slug ? `/sub_menu/${slug}` : undefined
+    case 'spotlight':
+        return slug ? `/spotlight/${slug}` : undefined
+    case 'testimonial':
+        return slug ? `/testimonial/${slug}` : undefined
+    case 'footersection':
+        return slug ? `/footersection/${slug}` : undefined
           
     default:
       console.warn('Invalid document type:', documentType)
