@@ -29,6 +29,11 @@ import article from 'schemas/documents/article'
 import detail_articles from 'schemas/documents/detail_articles'
 import navigation from 'schemas/documents/navigation'
 import sub_menu from 'schemas/documents/sub_menu'
+import spotlight from 'schemas/documents/spotlight'
+import { colorInput } from "@sanity/color-input";
+import testimonial from 'schemas/documents/testimonial'
+import footersection from 'schemas/documents/footersection'
+
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -48,6 +53,9 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   detail_articles.name,
   navigation.name,
   sub_menu.name,
+  spotlight.name,
+  testimonial.name,
+  footersection.name,
 ]
 
 export default defineConfig({
@@ -79,16 +87,19 @@ export default defineConfig({
       detail_articles,
       navigation,
       sub_menu,
+      spotlight,
+      testimonial,
+      footersection,
     ],
   },
   plugins: [
     deskTool({
-      structure: pageStructure([/*home, settings,*/ frontpage]),
+      structure: pageStructure([/*home, settings,*/ frontpage, footersection]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
-    singletonPlugin([/*home.name, settings.name,*/ frontpage.name]),
+    singletonPlugin([/*home.name, settings.name,*/ frontpage.name, footersection.name]),
     // Add the "Open preview" action
     productionUrl({
       apiVersion,
@@ -101,5 +112,6 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
     codeInput(),
+    colorInput(),
   ],
 })

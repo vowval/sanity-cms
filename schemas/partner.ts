@@ -5,7 +5,7 @@ export default defineType(
     {
         name: 'partnerlogo',
         type: 'document',
-        title: 'Partner Logo',
+        title: 'Partners',
         fields: [
           {
             name: 'name',

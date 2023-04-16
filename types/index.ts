@@ -203,3 +203,27 @@ export interface Sub_menuPayload {
   slug: string
   title?: string
 }
+
+export interface SpotlightPayload {
+  coverImage?: Image
+  description?: PortableTextBlock[]
+  overview?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}
+
+export interface TestimonialPayload {
+  coverImage?: Image
+  description?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}
+
+export interface FootersectionPayload {
+  description?: PortableTextBlock[]
+  slug: string
+  tags?: string[]
+  title?: string
+}

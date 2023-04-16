@@ -194,3 +194,39 @@ export const sub_menuBySlugQuery = groq`
 export const sub_menuPaths = groq`
   *[_type == "sub_menu" && slug.current != null].slug.current
 `
+export const spotlightBySlugQuery = groq`
+  *[_type == "spotlight" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const spotlightPaths = groq`
+  *[_type == "spotlight" && slug.current != null].slug.current
+`
+
+export const testimonialBySlugQuery = groq`
+  *[_type == "testimonial" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const testimonialPaths = groq`
+  *[_type == "testimonial" && slug.current != null].slug.current
+`
+export const footersectionBySlugQuery = groq`
+  *[_type == "footersection" && slug.current == $slug][0] {
+    _id,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const footersectionPaths = groq`
+  *[_type == "footersection" && slug.current != null].slug.current
+`
