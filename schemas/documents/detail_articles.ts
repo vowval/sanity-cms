@@ -209,17 +209,27 @@ export default defineType({
     defineField({
       name: 'podcast', // Replace with your document name
       type: 'document',
-      title: 'Podcast', // Replace with your document title
+      title: 'Podcast Section', // Replace with your document title
       description:'This File will be used as Podcast for the article.',
         fields: [
           {
-            name: 'audioFile', // Replace with your field name
-            type: 'file', // Use the 'file' type for uploading files
-            title: 'Audio File', // Replace with your field title
-            options: {
-              accept: '.mp3', // Specify the accepted file format(s) (e.g. MP3)
-            },
+            name: 'podcast_iframe_tag',
+            title: 'iFrame Tag',
+            type: 'array',
+            of: [
+              {
+                type: 'string',
+              },
+            ],
           },
+          // {
+          //   name: 'audioFile', // Replace with your field name
+          //   type: 'file', // Use the 'file' type for uploading files
+          //   title: 'Audio File', // Replace with your field title
+          //   options: {
+          //     accept: '.mp3', // Specify the accepted file format(s) (e.g. MP3)
+          //   },
+          // },
         ],
     }),
     defineField({
@@ -244,6 +254,24 @@ export default defineType({
           },
         },
       ],
+    }),
+    defineField({
+      name: 'youtube', // Replace with your document name
+      type: 'document',
+      title: 'Youtube Section', // Replace with your document title
+      description:'This File will be used as Youtube for the article.',
+        fields: [
+          {
+            name: 'youtube_src_url',
+            title: 'Youtube Link',
+            type: 'array',
+            of: [
+              {
+                type: 'string',
+              },
+            ],
+          },
+        ],
     }),
   ],
 })
