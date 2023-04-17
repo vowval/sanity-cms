@@ -6,6 +6,10 @@ It comes with a native Sanity Studio that offers features like real-time collabo
 The Studio connects to Sanity Content Lake, which gives you hosted content APIs with a flexible query language, on-demand image transformations, powerful patching, and more.
 You can use this starter to kick-start a personal website or learn these technologies.
 
+sanity
+[![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
+
+This Project
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vowval/sanity-cms.git)
 > **Note**
