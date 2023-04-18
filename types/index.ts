@@ -227,3 +227,11 @@ export interface FootersectionPayload {
   tags?: string[]
   title?: string
 }
+
+export interface HerosectionPayload {
+  description?: PortableTextBlock[]
+  overview?: PortableTextBlock[]
+  site?: string
+  slug: string
+  title?: string
+}

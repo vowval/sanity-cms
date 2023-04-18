@@ -1,9 +1,9 @@
-import { HomeIcon } from '@sanity/icons'
+import { DocumentIcon, ImageIcon, HomeIcon } from '@sanity/icons'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'frontpage',
-  title: 'Hero Image Widget',
+  name: 'herosection',
+  title: 'Hero Section',
   type: 'document',
   icon: HomeIcon,
   // Uncomment below to have edits publish automatically as you type
@@ -14,6 +14,15 @@ export default defineType({
       description: 'This field is the title of your personal website.',
       title: 'Title',
       type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'title',
+      },
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -80,16 +89,43 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'herobgimage',
-      title: 'Hero Section BG Image',
-      description:
-        'This image will be used as the cover image for the Hero BG.',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      validation: (rule) => rule.required(),
-    }),
+      name: 'heroSelectionType',
+      title: 'Hero Selection Type',
+      type: 'document',
+      fields: [
+        {
+          name: 'fieldType',
+          title: 'Field Type',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Image', value: 'image' },
+              { title: 'VideoUrl', value: 'string' },
+              { title: 'Imagegallery', value: 'imagegallery' },
+            ],
+          },
+        },
+        {
+          name: 'imageField',
+          title: 'Image Field',
+          type: 'image',
+          hidden: ({ parent }) => parent && parent.fieldType !== 'image',
+        },
+        {
+          name: 'videoUrl',
+          title: 'Video Url',
+          type: 'string',
+          hidden: ({ parent }) => parent && parent.fieldType !== 'string',
+        },
+        {
+          name: 'imageGalleryField',
+          title: 'Image Gallery Field',
+          type: 'array',
+          of: [{ type: 'image' }],
+          hidden: ({ parent }) => parent && parent.fieldType !== 'imagegallery',
+        },
+      ],
+    }),      
   ],
   preview: {
     select: {
@@ -103,3 +139,4 @@ export default defineType({
     },
   },
 })
+

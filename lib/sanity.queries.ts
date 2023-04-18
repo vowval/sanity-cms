@@ -230,3 +230,17 @@ export const footersectionBySlugQuery = groq`
 export const footersectionPaths = groq`
   *[_type == "footersection" && slug.current != null].slug.current
 `
+export const herosectionBySlugQuery = groq`
+  *[_type == "herosection" && slug.current == $slug][0] {
+    _id,
+    coverImage,
+    description,
+    overview,
+    site,
+    "slug": slug.current,
+    title,
+  }
+`
+export const herosectionPaths = groq`
+  *[_type == "herosection" && slug.current != null].slug.current
+`
