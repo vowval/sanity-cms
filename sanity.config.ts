@@ -34,6 +34,7 @@ import { colorInput } from "@sanity/color-input";
 import testimonial from 'schemas/documents/testimonial'
 import footersection from 'schemas/documents/footersection'
 import herosection from 'schemas/documents/herosection'
+import membership_benifits from 'schemas/documents/membership_benifits'
 
 
 const title =
@@ -90,6 +91,7 @@ export default defineConfig({
       navigation,
       sub_menu,
       spotlight,
+      membership_benifits,
       testimonial,
       footersection,
       herosection,

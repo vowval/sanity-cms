@@ -44,6 +44,7 @@ export default defineType({
                         description: 'Check this box if you want to recommend this.',
                         title: 'Recommended',
                         type: 'boolean',
+                        initialValue: false,
                         validation: (rule) => rule.required(),
                       }),
                       defineField({
