@@ -14,6 +14,17 @@ export default defineType({
         type: 'string',
         validation: (rule) => rule.required(),
       }),
+      defineField({
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {
+          source: 'title',
+          maxLength: 96,
+          isUnique: (value, context) => context.defaultIsUnique(value, context),
+        },
+        validation: (rule) => rule.required(),
+      }),
       {
           type: 'array',
           title: 'Testimonials List',
@@ -59,6 +70,32 @@ export default defineType({
                         options: {
                           layout: 'tags',
                         },
+                      }),
+                      defineField({
+                        name: 'author', // Replace with your document name
+                        type: 'document',
+                        title: 'Testimonial Author Section', // Replace with your document title
+                        description:'This File will be used as Testimonial.',
+                          fields: [
+                            {
+                              name: 'testimonial_author',
+                              title: 'Testimonial Author Name',
+                              type: 'string',
+                            },
+                          ],
+                      }),
+                      defineField({
+                        name: 'designation', // Replace with your document name
+                        type: 'document',
+                        title: 'Author Designation Section', // Replace with your document title
+                        description:'This File will be used as Testimonial.',
+                          fields: [
+                            {
+                              name: 'author_designation',
+                              title: 'Author Designation',
+                              type: 'string',
+                            },
+                          ],
                       }),
                       defineField({
                         name: 'blockContentOverview',
