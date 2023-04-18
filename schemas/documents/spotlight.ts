@@ -3,7 +3,7 @@ import { DocumentIcon, ImageIcon } from '@sanity/icons'
 
 export default defineType({
     type: 'document',
-    title: 'Spotlight',
+    title: 'Articles',
     name: 'spotlight',
     fields:[
       defineField({

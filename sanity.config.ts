@@ -33,6 +33,7 @@ import spotlight from 'schemas/documents/spotlight'
 import { colorInput } from "@sanity/color-input";
 import testimonial from 'schemas/documents/testimonial'
 import footersection from 'schemas/documents/footersection'
+import herosection from 'schemas/documents/herosection'
 
 
 const title =
@@ -56,6 +57,7 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
   spotlight.name,
   testimonial.name,
   footersection.name,
+  herosection.name,
 ]
 
 export default defineConfig({
@@ -90,6 +92,7 @@ export default defineConfig({
       spotlight,
       testimonial,
       footersection,
+      herosection,
     ],
   },
   plugins: [
