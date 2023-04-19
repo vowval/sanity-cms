@@ -31,6 +31,8 @@ import {
   testimonialPaths,
   footersectionBySlugQuery,
   footersectionPaths,
+  herosectionBySlugQuery,
+  herosectionPaths,
   
 } from 'lib/sanity.queries'
 import { createClient } from 'next-sanity'
@@ -51,6 +53,7 @@ import type {
   SpotlightPayload,
   TestimonialPayload,
   FootersectionPayload,
+  HerosectionPayload,
   
 } from 'types'
 
@@ -227,6 +230,16 @@ export async function getFootersectionBySlug({
   return await sanityClient(token)?.fetch(footersectionBySlugQuery, { slug })
 }
 
+export async function getHerosectionBySlug({
+  slug,
+  token,
+}: {
+  slug: string
+  token?: string
+}): Promise<HerosectionPayload | undefined> {
+  return await sanityClient(token)?.fetch(herosectionBySlugQuery, { slug })
+}
+
 export async function getProjectPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(projectPaths)
 }
@@ -281,4 +294,8 @@ export async function getTestimonialPaths(): Promise<string[]> {
 
 export async function getFootersectionPaths(): Promise<string[]> {
   return await sanityClient()?.fetch(footersectionPaths)
+}
+
+export async function getHerosectionPaths(): Promise<string[]> {
+  return await sanityClient()?.fetch(herosectionPaths)
 }

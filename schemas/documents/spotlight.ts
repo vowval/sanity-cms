@@ -3,7 +3,7 @@ import { DocumentIcon, ImageIcon } from '@sanity/icons'
 
 export default defineType({
     type: 'document',
-    title: 'Spotlight',
+    title: 'Articles',
     name: 'spotlight',
     fields:[
       defineField({
@@ -44,6 +44,7 @@ export default defineType({
                         description: 'Check this box if you want to recommend this.',
                         title: 'Recommended',
                         type: 'boolean',
+                        initialValue: false,
                         validation: (rule) => rule.required(),
                       }),
                       defineField({

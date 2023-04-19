@@ -33,6 +33,9 @@ export function resolveHref(
         return slug ? `/testimonial/${slug}` : undefined
     case 'footersection':
         return slug ? `/footersection/${slug}` : undefined
+    case 'herosection':
+        return slug ? `/herosection/${slug}` : undefined
+        
           
     default:
       console.warn('Invalid document type:', documentType)

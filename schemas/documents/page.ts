@@ -143,6 +143,8 @@ export default defineType({
             { type: 'partnerlogo' },
             // { type: 'article' },
             { type: 'spotlight' },
+            // { type: 'project' },
+            { type: 'herosection' },
           ],
         }),
       ],

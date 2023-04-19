@@ -7,6 +7,7 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 You can use this starter to kick-start a personal website or learn these technologies.
 
 sanity
+
 [![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
 This Project
