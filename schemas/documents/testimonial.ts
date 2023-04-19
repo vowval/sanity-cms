@@ -47,7 +47,5 @@ export default defineType({
           }]
 
         }
-
-
     ]
 })
