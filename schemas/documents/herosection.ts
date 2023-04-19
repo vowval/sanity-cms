@@ -33,46 +33,77 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'overview',
-      description:
-        'Hero section sub title.',
-      title: 'Hero Sub Title',
+      name: 'blockContentOverview',
       type: 'array',
+      title: 'Overview',
       of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
+        defineField({
+          type: 'block',
           marks: {
             annotations: [
               {
-                name: 'link',
+                name: 'fontstyle',
                 type: 'object',
-                title: 'Link',
+                title: 'Font Styles & Link',
+                icon: DocumentIcon,
                 fields: [
                   {
                     name: 'href',
                     type: 'url',
                     title: 'Url',
                   },
+                  {
+                    name: 'fontFamily',
+                    title: 'Font Family',
+                    type: 'string',
+                    options: {
+                      list: [
+                        { title: 'Arial', value: 'Arial' },
+                        { title: 'Helvetica', value: 'Helvetica' },
+                        { title: 'Times New Roman', value: 'Times New Roman' },
+                      ],
+                    },
+                  },
+                  {
+                    name: 'color', 
+                    title: 'Color', 
+                    type: 'color',
+                  },
                 ],
               },
             ],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
-              },
-              {
-                title: 'Strong',
-                value: 'strong',
-              },
-            ],
-          },
-          styles: [],
-          type: 'block',
+          }
         }),
-      ],
-      validation: (rule) => rule.max(155).required(),
+        defineField({
+          type: 'image',
+          icon: ImageIcon,
+          name: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+          preview: {
+            select: {
+              imageUrl: 'asset.url',
+              title: 'caption',
+            },
+          },
+          fields: [
+            defineField({
+              title: 'Caption',
+              name: 'caption',
+              type: 'string',
+            }),
+            defineField({
+              name: 'alt',
+              type: 'string',
+              title: 'Alt text',
+              description:
+                'Alternative text for screenreaders. Falls back on caption if not set',
+            }),
+          ],
+        }),
+      ]
     }),
     defineField({
       name: 'joincta',
