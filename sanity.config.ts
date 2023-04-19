@@ -33,10 +33,7 @@ import spotlight from 'schemas/documents/spotlight'
 import { colorInput } from "@sanity/color-input";
 import testimonial from 'schemas/documents/testimonial'
 import footersection from 'schemas/documents/footersection'
-<<<<<<< HEAD
 import herosection from 'schemas/documents/herosection'
-=======
->>>>>>> 092e65a (Membership Benefits Schema (#20))
 import membership_benifits from 'schemas/documents/membership_benifits'
 
 
