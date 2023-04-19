@@ -44,7 +44,6 @@ export default defineType({
                         description: 'Check this box if you want to recommend this.',
                         title: 'Recommended',
                         type: 'boolean',
-                        initialValue: false,
                         validation: (rule) => rule.required(),
                       }),
                       defineField({
@@ -52,7 +51,7 @@ export default defineType({
                         type: 'array',
                         title: 'Overview',
                         of: [
-                          defineField({
+                          defineArrayMember({
                             type: 'block',
                             marks: {
                               annotations: [
@@ -145,7 +144,7 @@ export default defineType({
                         type: 'array',
                         title: 'Description',
                         of: [
-                          defineField({
+                          defineArrayMember({
                             type: 'block',
                             marks: {
                               annotations: [

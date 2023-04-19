@@ -37,7 +37,7 @@ export default defineType({
       type: 'array',
       title: 'Overview',
       of: [
-        defineField({
+        defineArrayMember({
           type: 'block',
           marks: {
             annotations: [
@@ -110,14 +110,12 @@ export default defineType({
       description: 'This field is the join CTA text of Hero Section.',
       title: 'Join CTA',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'aboutcta',
       description: 'This field is the about CTA text of Hero Section.',
       title: 'About CTA',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'heroSelectionType',
@@ -152,7 +150,58 @@ export default defineType({
           name: 'imageGalleryField',
           title: 'Image Gallery Field',
           type: 'array',
-          of: [{ type: 'image' }],
+          of:[{
+            type: 'document',
+            fields: [
+              defineField({
+                name: 'photo',
+                title: 'Photo',
+                type: 'image',
+              }),
+              defineField({
+                name: 'imagesliderscontent',
+                title: 'Image Slider Content',
+                type: 'array',
+                of:[{
+                  type: 'block',
+                  marks: {
+                    annotations: [
+                      {
+                        name: 'fontstyle',
+                        type: 'object',
+                        title: 'Font Styles & Link',
+                        icon: DocumentIcon,
+                        fields: [
+                          {
+                            name: 'href',
+                            type: 'url',
+                            title: 'Url',
+                          },
+                          {
+                            name: 'fontFamily',
+                            title: 'Font Family',
+                            type: 'string',
+                            options: {
+                              list: [
+                                { title: 'Arial', value: 'Arial' },
+                                { title: 'Helvetica', value: 'Helvetica' },
+                                { title: 'Times New Roman', value: 'Times New Roman' },
+                              ],
+                            },
+                          },
+                          {
+                            name: 'color', 
+                            title: 'Color', 
+                            type: 'color',
+                          },
+                        ],
+                      },
+                    ],
+                  }
+                }]
+              })
+            ]
+          }],
           hidden: ({ parent }) => parent && parent.fieldType !== 'imagegallery',
         },
       ],
