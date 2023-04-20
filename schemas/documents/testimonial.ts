@@ -40,7 +40,41 @@ export default defineType({
                 title: 'testimony',
                 type: 'array',
                 of:[{
-                  type: 'block'
+                  type: 'block',
+                  marks: {
+                    annotations: [
+                      {
+                        name: 'fontstyle',
+                        type: 'object',
+                        title: 'Font Styles & Link',
+                        icon: DocumentIcon,
+                        fields: [
+                          {
+                            name: 'href',
+                            type: 'url',
+                            title: 'Url',
+                          },
+                          {
+                            name: 'fontFamily',
+                            title: 'Font Family',
+                            type: 'string',
+                            options: {
+                              list: [
+                                { title: 'Arial', value: 'Arial' },
+                                { title: 'Helvetica', value: 'Helvetica' },
+                                { title: 'Times New Roman', value: 'Times New Roman' },
+                              ],
+                            },
+                          },
+                          {
+                            name: 'color', 
+                            title: 'Color', 
+                            type: 'color',
+                          },
+                        ],
+                      },
+                    ],
+                  }
                 }]
               })
             ]
