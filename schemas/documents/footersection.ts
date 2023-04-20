@@ -397,5 +397,11 @@ export default defineType({
           }),
         ],
       }),
+      defineField({
+        name: 'footer_bottom_section',
+        description: 'This field is the footer bottom section text.',
+        title: 'Footer Bottom Section',
+        type: 'string',
+      }),
     ]
 })
