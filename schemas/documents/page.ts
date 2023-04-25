@@ -145,6 +145,8 @@ export default defineType({
             { type: 'spotlight' },
             // { type: 'project' },
             { type: 'herosection' },
+            { type: 'testimonials' },
+            { type: 'membership_benefits' },
           ],
         }),
       ],
